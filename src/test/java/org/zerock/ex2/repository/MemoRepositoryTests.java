@@ -1,5 +1,6 @@
 package org.zerock.ex2.repository;
 
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,8 +14,8 @@ public class MemoRepositoryTests {
   MemoRepository memoRepository;
 
   @Test
-  public void testUpdate() {
-    Memo memo = Memo.builder().mno(100L).memoText("Update Text").build();
-    System.out.println(memoRepository.save(memo));
+  public void testDelete() {
+    Long mno = 100L;
+    memoRepository.deleteById(mno);
   }
 }
